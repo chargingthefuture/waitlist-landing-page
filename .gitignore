@@ -1,32 +1,10 @@
-chyme-android/sentry-wizard
-
-# Node
+.next/
 node_modules/
+.env
+.env.*
 npm-debug.log*
-yarn.lock
-pnpm-lock.yaml
-# package-lock.json
-!platform/package-lock.json
-!ctf/pnpm-lock.yaml
-!wiki-blog/pnpm-lock.yaml
-
-# Platform build output
-platform/dist/
-
-# ctf rewrite build artifacts and local env
-ctf/packages/web/.next/
-ctf/packages/web/.env.local
-ctf/packages/web/tsconfig.tsbuildinfo
-ctf/packages/mobile/.expo/
-ctf/packages/mobile/dist/
-ctf/packages/mobile/.env
-ctf/packages/mobile/.env.local
-
-# OS / editor junk
-.DS_Store
-*.log
-
-# Local AI prompt scratch notes
-.ai/
-
-
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.vercel
+.env*.local
