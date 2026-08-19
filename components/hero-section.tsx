@@ -5,7 +5,7 @@ import { JoinButton } from "@/components/join-button"
 const facts = [
   { value: "21", label: "Apps, one account", accent: "vibrant-lime" },
   { value: "FREE", label: "No cost to join", accent: "vibrant-yellow" },
-  { value: "1", label: "Person paying the bills", accent: "vibrant-coral" },
+  { value: "0", label: "Ads or investors", accent: "vibrant-coral" },
 ]
 
 const factClasses: Record<string, string> = {
@@ -61,7 +61,7 @@ export function HeroSection() {
             <div className="bg-[#0a0a0a]/90 backdrop-blur-sm rounded-xl p-3 sm:p-4 flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-vibrant-coral flex-shrink-0" aria-hidden="true" />
               <span className="font-[var(--font-inter)] text-xs sm:text-sm text-muted-foreground">
-                Your account, your posts, and your credits are all still there. Nothing is deleted while the app is down.
+                Accounts, posts, and ServiceCredits balances stay exactly as they are while the app is switched off.
               </span>
             </div>
           </div>
@@ -87,9 +87,9 @@ export function HeroSection() {
           </div>
 
           <p className="font-[var(--font-inter)] text-sm sm:text-base md:text-lg text-muted-foreground mb-6 max-w-lg leading-relaxed">
-            Skills Economy runs on hosting that one survivor pays for out of pocket. When the month's
-            costs are not covered, the app goes offline and this page stands in for it. Put your name
-            on the waitlist and you get an email the day it comes back.
+            Skills Economy runs in cycles. It is switched off between them, and this page stands in
+            until the next one opens. Put your name on the waitlist and you get one email the day it
+            comes back.
           </p>
 
           {/* Facts row */}
@@ -128,7 +128,7 @@ export function HeroSection() {
               href="#why-paused"
               className="inline-flex items-center justify-center font-[var(--font-bangers)] text-base sm:text-lg md:text-xl px-6 py-4 sm:px-8 sm:py-5 rounded-xl border border-border hover:bg-secondary transition-colors"
             >
-              WHY IT IS PAUSED
+              WHY YOU SEE THIS
             </a>
           </div>
         </div>

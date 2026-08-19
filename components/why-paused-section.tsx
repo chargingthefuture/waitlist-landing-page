@@ -1,32 +1,32 @@
-import { Wallet, PowerOff, Database, Hammer } from "lucide-react"
+import { Power, ShieldOff, Database, RotateCcw } from "lucide-react"
 
-const reasons = [
+const points = [
   {
-    icon: Wallet,
-    title: "WHO PAYS FOR IT",
+    icon: Power,
+    title: "NOT AN OUTAGE",
     body:
-      "One survivor pays the hosting bill out of pocket. There is no company behind Skills Economy, no grant, no investor, and right now no one contributing toward the cost.",
+      "Nothing broke and nothing was taken down. Skills Economy runs in cycles, and it is switched off between them on purpose.",
     accent: "vibrant-lime",
   },
   {
-    icon: PowerOff,
-    title: "WHAT HAPPENS WHEN A MONTH IS NOT COVERED",
+    icon: ShieldOff,
+    title: "NO ADS, NO INVESTORS",
     body:
-      "Hosting is billed every month whether or not the money is there. When it is not, the app is switched off instead of running up a debt, and this page stands in for it.",
+      "The app answers to its members and nobody else. That independence is exactly why it runs in cycles instead of on someone else's terms.",
     accent: "vibrant-coral",
   },
   {
     icon: Database,
-    title: "WHAT DOES NOT HAPPEN",
+    title: "NOTHING IS LOST",
     body:
-      "Nothing is deleted. Accounts, posts, housing listings, skills, and ServiceCredits balances all sit exactly where you left them and come back the way they were.",
+      "Accounts, posts, housing listings, skills, and ServiceCredits balances all sit where you left them and come back the way they were.",
     accent: "vibrant-lavender",
   },
   {
-    icon: Hammer,
-    title: "WHAT BRINGS IT BACK",
+    icon: RotateCcw,
+    title: "IT COMES BACK",
     body:
-      "Paid work. When there is enough work to cover the next month of hosting, the app goes back online and everyone on the waitlist gets an email that day.",
+      "It has paused and returned before. The waitlist is simply how you hear about it the day the next cycle opens.",
     accent: "vibrant-mint",
   },
 ]
@@ -44,32 +44,32 @@ export function WhyPausedSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-10 sm:mb-14 md:mb-16">
           <span className="inline-block font-[var(--font-inter)] text-xs sm:text-sm uppercase tracking-widest text-vibrant-coral mb-3">
-            The reason this page exists
+            Where things stand
           </span>
           <h2
             id="why-paused-heading"
             className="font-[var(--font-bangers)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wide text-foreground mb-4"
           >
-            WHY THE APP IS PAUSED
+            WHY YOU ARE SEEING THIS PAGE
           </h2>
           <p className="font-[var(--font-inter)] text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed">
-            No outage, no shutdown, nothing hidden. The plain version is the hosting bill.
+            Skills Economy is between cycles. This page stands in until the next one opens.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6 max-w-5xl mx-auto" role="list">
-          {reasons.map((reason) => {
-            const colors = accentClasses[reason.accent]
+          {points.map((point) => {
+            const colors = accentClasses[point.accent]
             return (
-              <div key={reason.title} className={`${colors.card} border rounded-2xl p-5 sm:p-6 md:p-7`} role="listitem">
+              <div key={point.title} className={`${colors.card} border rounded-2xl p-5 sm:p-6 md:p-7`} role="listitem">
                 <div className={`${colors.icon} w-12 h-12 rounded-xl flex items-center justify-center mb-4`} aria-hidden="true">
-                  <reason.icon className={`w-6 h-6 ${colors.text}`} />
+                  <point.icon className={`w-6 h-6 ${colors.text}`} />
                 </div>
                 <h3 className={`font-[var(--font-bangers)] text-lg sm:text-xl md:text-2xl mb-2 ${colors.text}`}>
-                  {reason.title}
+                  {point.title}
                 </h3>
                 <p className="font-[var(--font-inter)] text-muted-foreground text-xs sm:text-sm leading-relaxed">
-                  {reason.body}
+                  {point.body}
                 </p>
               </div>
             )
@@ -77,7 +77,7 @@ export function WhyPausedSection() {
         </div>
 
         <p className="font-[var(--font-inter)] text-xs sm:text-sm text-muted-foreground text-center mt-8 sm:mt-10 max-w-2xl mx-auto leading-relaxed">
-          Already a member? You do not need to do anything. Sign in as usual once the app is back.
+          Already a member? Nothing to do. Sign in as usual when the next cycle opens.
           The waitlist is for people who have not joined yet.
         </p>
       </div>

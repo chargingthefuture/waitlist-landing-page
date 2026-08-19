@@ -39,7 +39,7 @@ export function Footer() {
             <ul className="font-[var(--font-inter)] text-xs sm:text-sm text-muted-foreground flex flex-col gap-2">
               <li className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-vibrant-coral rounded-full flex-shrink-0" aria-hidden="true" />
-                Paused until hosting is covered
+                Between cycles, back soon
               </li>
               <li>
                 <a

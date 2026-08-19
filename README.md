@@ -1,8 +1,11 @@
 # Waitlist landing page
 
-Standby page for Skills Economy (`app.chargingthefuture.com`). It goes up when the app is switched
-off because a month of hosting is not covered, and it does one job: explain why the app is paused
-and send people to the waitlist.
+Standby page for Skills Economy (`app.chargingthefuture.com`). The app runs in cycles and is
+switched off between them; this page stands in while it is off. It does one job: say where things
+stand and send people to the waitlist.
+
+Keep the copy matter-of-fact. It is a status page, not an appeal — say what is happening and what
+happens next, and leave it there.
 
 ## How joining works
 
@@ -35,5 +38,5 @@ Next.js (app router) + Tailwind CSS v4 + shadcn/ui, deployed on Vercel.
 ## Deploy note
 
 This app sits at the repository root. It used to live in a `waitlist-landing-page/` folder inside
-the monorepo, so the Vercel project's Root Directory must be blank — while it still says
+the monorepo, so the Vercel project's Root Directory must be blank. While it still says
 `waitlist-landing-page/`, every build fails with "The specified Root Directory ... does not exist".

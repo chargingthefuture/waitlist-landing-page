@@ -19,7 +19,7 @@ const steps = [
     number: "03",
     icon: BellRing,
     title: "GET THE EMAIL",
-    description: "Once hosting is covered again, the app goes back online and one email goes out to the list.",
+    description: "The day the next cycle opens, one email goes out to everyone on the list.",
     accent: "vibrant-coral",
   },
   {

@@ -28,9 +28,9 @@ export function WaitlistCTA() {
               PUT YOUR NAME DOWN
             </h2>
             <p className="font-[var(--font-inter)] text-muted-foreground text-sm sm:text-base max-w-xl mx-auto leading-relaxed mb-8">
-              The button opens the Skills Economy sign-up page in a new tab. While the app is paused,
-              that page holds your email on the waitlist. When the app is back, the same page signs
-              you straight in to finish your account.
+              The button opens the Skills Economy sign-up page in a new tab. Between cycles that page
+              holds your email on the waitlist. Once the app is back, the same page signs you straight
+              in to finish your account.
             </p>
 
             <JoinButton className="text-lg sm:text-xl md:text-2xl px-8 py-5 sm:py-6 w-full sm:w-auto" />
@@ -46,7 +46,7 @@ export function WaitlistCTA() {
           </div>
 
           <p className="font-[var(--font-inter)] text-xs sm:text-sm text-muted-foreground text-center mt-6 sm:mt-8 max-w-xl mx-auto leading-relaxed">
-            The app has gone down before and come back every time. When they interfere, we keep going.
+            It has paused and come back every time. When they interfere, we keep going.
           </p>
         </div>
       </div>

@@ -20,7 +20,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Skills Economy is paused — join the waitlist",
   description:
-    "Skills Economy is offline while its hosting bill is unpaid. Leave your email on the waitlist and you get one message the day the app is back.",
+    "Skills Economy is between cycles and switched off right now. Leave your email on the waitlist and you get one message the day it is back.",
   icons: {
     icon: [
       { url: '/icon-light-32x32.png', type: 'image/png', sizes: '32x32' },

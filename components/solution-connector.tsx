@@ -101,8 +101,8 @@ export function SolutionConnector({ problem, solutions, onClose }: SolutionConne
 
           <div className="pt-4 border-t-[2px] border-foreground text-center space-y-3">
             <p className="font-[var(--font-inter)] text-xs sm:text-sm text-muted-foreground">
-              The app is paused while its hosting bill is unpaid. Leave your email and you get one
-              message the day it is back.
+              The app is between cycles right now. Leave your email and you get one message the day
+              it is back.
             </p>
             <JoinButton className="text-lg px-6 py-3" />
           </div>
