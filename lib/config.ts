@@ -14,8 +14,10 @@ export const config = {
     signUp: "https://accounts.app.chargingthefuture.com/sign-up",
     github: "https://github.com/chargingthefuture",
     landing: "https://chargingthefuture.com",
-    terms: "https://chargingthefuture.github.io/chargingthefuture/article/chargingthefuture/Terms-of-Service-and-Privacy-Policy#terms-of-service",
-    privacy: "https://chargingthefuture.github.io/chargingthefuture/article/chargingthefuture/Terms-of-Service-and-Privacy-Policy#privacy-policy",
+    // Terms and the privacy policy now live in the app itself, on one page at /terms.
+    // The two anchors are the section ids that page renders.
+    terms: "https://app.chargingthefuture.com/terms#terms",
+    privacy: "https://app.chargingthefuture.com/terms#privacy",
     blog: "https://chargingthefuture.github.io/chargingthefuture/",
   },
 } as const
