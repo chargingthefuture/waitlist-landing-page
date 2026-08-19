@@ -1,5 +1,12 @@
 import { config } from "@/lib/config"
 
+const privacyPoints = [
+  "Complete account deletion",
+  "Data anonymization",
+  "We never sell data",
+  "Regular security audits",
+]
+
 export function Footer() {
   return (
     <footer className="border-t border-border bg-card" role="contentinfo">
@@ -7,10 +14,10 @@ export function Footer() {
       <div className="bg-vibrant-lime/10 border-b border-vibrant-lime/20 py-4" role="region" aria-label="Waitlist summary">
         <div className="container mx-auto px-4 text-center">
           <p className="font-[var(--font-bangers)] text-base sm:text-lg md:text-xl text-vibrant-lime">
-            5M SURVIVORS. $300B VISION. LIMITED EARLY ACCESS.
+            THE APP IS PAUSED. THE WAITLIST IS OPEN.
           </p>
           <p className="font-[var(--font-inter)] text-xs sm:text-sm text-muted-foreground mt-1">
-            Join the waitlist to be first in line for training, gigs, and ServiceCredits.
+            One email the day it is back. Nothing else.
           </p>
         </div>
       </div>
@@ -26,13 +33,13 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Platform Status */}
+          {/* Status */}
           <div>
-            <h4 className="font-[var(--font-bangers)] text-base sm:text-lg md:text-xl mb-2 sm:mb-3 text-foreground">PLATFORM STATUS</h4>
+            <h4 className="font-[var(--font-bangers)] text-base sm:text-lg md:text-xl mb-2 sm:mb-3 text-foreground">APP STATUS</h4>
             <ul className="font-[var(--font-inter)] text-xs sm:text-sm text-muted-foreground flex flex-col gap-2">
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-vibrant-lime rounded-full flex-shrink-0" />
-                Active and continuously improving
+                <span className="w-2 h-2 bg-vibrant-coral rounded-full flex-shrink-0" aria-hidden="true" />
+                Paused until hosting is covered
               </li>
               <li>
                 <a
@@ -42,29 +49,27 @@ export function Footer() {
                   className="hover:text-vibrant-lime transition-colors"
                   aria-label="View source code on GitHub"
                 >
-                  Access: Open source code
+                  Source code on GitHub
                 </a>
               </li>
-                            <li>
+              <li>
                 <a
                   href={config.links.blog}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-vibrant-lime transition-colors"
-                  aria-label="Blog"
                 >
                   Blog
                 </a>
               </li>
               <li>
                 <a
-                  href={config.links.signalGroup}
+                  href={config.links.landing}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-vibrant-lime transition-colors"
-                  aria-label="Join Signal group chat"
                 >
-                  Chat: Signal group
+                  What Skills Economy is
                 </a>
               </li>
             </ul>
@@ -74,22 +79,12 @@ export function Footer() {
           <div>
             <h4 className="font-[var(--font-bangers)] text-base sm:text-lg md:text-xl mb-2 sm:mb-3 text-foreground">PRIVACY COMMITMENT</h4>
             <ul className="font-[var(--font-inter)] text-xs sm:text-sm text-muted-foreground flex flex-col gap-2">
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-vibrant-mint rounded-full flex-shrink-0" />
-                Complete account deletion
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-vibrant-mint rounded-full flex-shrink-0" />
-                Data anonymization
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-vibrant-mint rounded-full flex-shrink-0" />
-                We never sell data
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-vibrant-mint rounded-full flex-shrink-0" />
-                Regular security audits
-              </li>
+              {privacyPoints.map((point) => (
+                <li key={point} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-vibrant-mint rounded-full flex-shrink-0" aria-hidden="true" />
+                  {point}
+                </li>
+              ))}
             </ul>
           </div>
         </div>

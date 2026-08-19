@@ -1,54 +1,41 @@
 "use client"
 
-import { X, ArrowRight } from "lucide-react"
+import { X } from "lucide-react"
 import {
   Home,
   Car,
   Briefcase,
   Users,
   BookOpen,
-  Radio,
-  MessageSquare,
-  MessageCircle,
-  Headphones,
+  Share2,
+  AlertTriangle,
+  Smile,
   Mic,
 } from "lucide-react"
-import { config } from "@/lib/config"
+import { JoinButton } from "@/components/join-button"
 
 const serviceIcons: Record<string, typeof Home> = {
   LightHouse: Home,
   TrustTransport: Car,
-  "Workforce Recruiter": Briefcase,
-  SupportMatch: Users,
+  Workforce: Briefcase,
+  PeerProgramming: Users,
   Directory: BookOpen,
-  SocketRelay: Radio,
-  CompareNotes: MessageSquare,
-  GentlePulse: Headphones,
+  SocketRelay: Share2,
+  ClickLog: AlertTriangle,
+  Mood: Smile,
   Chyme: Mic,
 }
 
 const serviceDescriptions: Record<string, string> = {
-  LightHouse: "Find safe accommodations and escape dangerous living situations",
-  TrustTransport: "Get safe rides to avoid public harassment and surveillance",
-  "Workforce Recruiter": "Review the collective skillsets of the TI Skills Economy and find or expand your career amongst TIs",
-  SupportMatch: "Find accountability partners who understand",
-  Directory: "Build genuine professional connections away from manipulation",
-  SocketRelay: "Get items through our community when stores are problematic",
-  CompareNotes: "Document patterns, incidents, and share evidence with the community",
-  GentlePulse: "Manage stress, anxiety, and wellness when dealing with constant harassment",
-  Chyme: "Social audio conversations away from perps",
-}
-
-const serviceUrls: Record<string, string> = {
-  LightHouse: "/apps/lighthouse",
-  TrustTransport: "/apps/trusttransport",
-  "Workforce Recruiter": "/apps/workforce-recruiter",
-  SupportMatch: "/apps/supportmatch",
-  Directory: "/apps/directory",
-  SocketRelay: "/apps/socketrelay",
-  CompareNotes: "/apps/comparenotes",
-  GentlePulse: "/apps/gentlepulse",
-  Chyme: "/apps/chyme",
+  LightHouse: "Housing listings posted and checked by other survivors.",
+  TrustTransport: "Rides from drivers screened by the community.",
+  Workforce: "See the skills across the community, and find or build work inside it.",
+  PeerProgramming: "Weekly sessions with survivors working through the same things.",
+  Directory: "Browse who is here and what they can do.",
+  SocketRelay: "Ask the community for an item or a hand when the usual route fails.",
+  ClickLog: "Log what happened, with or without location, and check in when you are safe.",
+  Mood: "Track how you are doing over time and see the pattern for yourself.",
+  Chyme: "Live audio rooms with people who understand it.",
 }
 
 interface SolutionConnectorProps {
@@ -83,23 +70,22 @@ export function SolutionConnector({ problem, solutions, onClose }: SolutionConne
         {/* Solutions */}
         <div className="p-6 space-y-6">
           <p className="font-[var(--font-bangers)] text-lg md:text-xl text-center">
-            Here's how our platform addresses this:
+            Here is what the app has for this:
           </p>
 
           <div className="grid md:grid-cols-2 gap-4">
-            {solutions.map((solution, index) => {
+            {solutions.map((solution) => {
               const Icon = serviceIcons[solution]
-              const description = serviceDescriptions[solution] || "A tool to help address this problem"
-              const url = serviceUrls[solution] || "#"
+              const description = serviceDescriptions[solution] || "Part of the app built for this problem."
 
               return (
                 <div
                   key={solution}
-                  className="border-[3px] border-foreground bg-background p-4 space-y-3 group hover:bg-accent transition-colors"
+                  className="border-[3px] border-foreground bg-background p-4"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="p-2 border-[2px] border-foreground bg-card group-hover:bg-accent-foreground group-hover:text-accent transition-colors">
-                      {Icon && <Icon className="w-6 h-6" />}
+                    <div className="p-2 border-[2px] border-foreground bg-card">
+                      {Icon && <Icon className="w-6 h-6" aria-hidden="true" />}
                     </div>
                     <div className="flex-1">
                       <h3 className="font-[var(--font-bangers)] text-lg">{solution}</h3>
@@ -108,35 +94,20 @@ export function SolutionConnector({ problem, solutions, onClose }: SolutionConne
                       </p>
                     </div>
                   </div>
-                  <a
-                    href={`${config.links.app}${url}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full p-2 border-[2px] border-foreground bg-card hover:bg-accent-foreground hover:text-accent transition-colors font-[var(--font-inter)] text-sm"
-                  >
-                    Access {solution}
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
                 </div>
               )
             })}
           </div>
 
-          <div className="pt-4 border-t-[2px] border-foreground text-center">
-            <a
-              href={config.links.app}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 border-[3px] border-foreground bg-foreground text-background hover:bg-accent hover:text-foreground transition-colors font-[var(--font-bangers)] text-lg"
-            >
-              Get Started
-              <ArrowRight className="w-5 h-5" />
-            </a>
+          <div className="pt-4 border-t-[2px] border-foreground text-center space-y-3">
+            <p className="font-[var(--font-inter)] text-xs sm:text-sm text-muted-foreground">
+              The app is paused while its hosting bill is unpaid. Leave your email and you get one
+              message the day it is back.
+            </p>
+            <JoinButton className="text-lg px-6 py-3" />
           </div>
         </div>
       </div>
     </div>
   )
 }
-
-

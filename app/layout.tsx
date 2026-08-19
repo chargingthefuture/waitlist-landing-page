@@ -18,16 +18,15 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Join the Waitlist | World's First Psyop-Free TI Economy",
+  title: "Skills Economy is paused — join the waitlist",
   description:
-    "Be part of a $300B survivor-led economy uniting 5 million people. Limited early access to training, gigs, and ServiceCredits. Join the waitlist now.",
+    "Skills Economy is offline while its hosting bill is unpaid. Leave your email on the waitlist and you get one message the day the app is back.",
   icons: {
     icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
       { url: '/icon-light-32x32.png', type: 'image/png', sizes: '32x32' },
       { url: '/icon-dark-32x32.png', type: 'image/png', sizes: '32x32', media: '(prefers-color-scheme: dark)' },
     ],
-    apple: '/apple-icon.png',
+    apple: '/apple-icon.svg',
   },
 }
 

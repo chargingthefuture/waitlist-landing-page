@@ -8,10 +8,9 @@ import {
   Briefcase,
   Users,
   BookOpen,
-  Radio,
-  MessageSquare,
-  MessageCircle,
-  Headphones,
+  Share2,
+  AlertTriangle,
+  Smile,
   Mic,
   CheckCircle2,
 } from "lucide-react"
@@ -23,14 +22,13 @@ import {
 const serviceIcons: Record<string, typeof Home> = {
   LightHouse: Home,
   TrustTransport: Car,
-  "Workforce Recruiter": Briefcase,
-  SupportMatch: Users,
+  Workforce: Briefcase,
+  PeerProgramming: Users,
   Directory: BookOpen,
-  SocketRelay: Radio,
-  CompareNotes: MessageSquare,
-  GentlePulse: Headphones,
+  SocketRelay: Share2,
+  ClickLog: AlertTriangle,
+  Mood: Smile,
   Chyme: Mic,
-  "Chat Groups": MessageCircle,
 }
 
 interface ProblemCardProps {
@@ -168,5 +166,3 @@ export function ProblemCard({
     </div>
   )
 }
-
-

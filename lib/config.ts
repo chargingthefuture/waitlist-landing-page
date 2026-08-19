@@ -9,13 +9,13 @@ export const config = {
   },
   links: {
     app: "https://app.chargingthefuture.com",
+    // Clerk's hosted sign-up page. When the waitlist is switched on in Clerk, this
+    // page shows the waitlist form instead of sign-up, so one link covers both states.
+    signUp: "https://accounts.app.chargingthefuture.com/sign-up",
     github: "https://github.com/chargingthefuture",
-    townhall: "https://app.chargingthefuture.com/apps/chyme/room/43d5333a-1c86-462a-b600-7fbb3ccca285",
-    discourse: "https://chargingthefuture.discourse.group",
-    signalGroup: "https://signal.group/#CjQKILHj7074l2Kl-oYy0qGSFdydXbtu0Pf66Z_88K9IlSCtEhDDdqV_BFAW2qm2EiTGEaNs",
+    landing: "https://chargingthefuture.com",
     terms: "https://chargingthefuture.github.io/chargingthefuture/article/chargingthefuture/Terms-of-Service-and-Privacy-Policy#terms-of-service",
     privacy: "https://chargingthefuture.github.io/chargingthefuture/article/chargingthefuture/Terms-of-Service-and-Privacy-Policy#privacy-policy",
     blog: "https://chargingthefuture.github.io/chargingthefuture/",
   },
 } as const
-

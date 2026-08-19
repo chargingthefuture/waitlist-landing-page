@@ -1,7 +1,7 @@
 import { HeroSection } from "@/components/hero-section"
-import { FeaturesSection } from "@/components/features-section"
+import { WhyPausedSection } from "@/components/why-paused-section"
 import { ServicesSection } from "@/components/services-section"
-import { MomentumSection } from "@/components/momentum-section"
+import { FeaturesSection } from "@/components/features-section"
 import { HowItWorksSection } from "@/components/how-it-works-section"
 import { WaitlistCTA } from "@/components/waitlist-cta"
 import { Footer } from "@/components/footer"
@@ -17,9 +17,9 @@ export default function Home() {
       </a>
       <main id="main-content" className="min-h-screen bg-background">
         <HeroSection />
-        <FeaturesSection />
+        <WhyPausedSection />
         <ServicesSection />
-        <MomentumSection />
+        <FeaturesSection />
         <HowItWorksSection />
         <WaitlistCTA />
         <Footer />

@@ -1,30 +1,39 @@
-# Comic landing page
+# Waitlist landing page
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Standby page for Skills Economy (`app.chargingthefuture.com`). It goes up when the app is switched
+off because a month of hosting is not covered, and it does one job: explain why the app is paused
+and send people to the waitlist.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/farahs-projects-13699e1e/v0-comic-landing-page)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/uVu5PzZe3Ib)
+## How joining works
 
-## Overview
+There is no sign-up form in this repo. The single "Join the waitlist" button opens Clerk's hosted
+sign-up page in a new tab:
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+```
+https://accounts.app.chargingthefuture.com/sign-up
+```
 
-## Deployment
+Clerk's own waitlist switch decides what that page shows. Switch it on and the page collects an
+email for the waitlist; switch it off and the same page signs people up normally. Nothing here
+needs to change either way. The URL lives in `lib/config.ts`.
 
-Your project is live at:
+The older self-hosted form (`/api/waitlist`, the `waitlist_signups` table, and the `pg` client) has
+been removed. `migrations/2026-02-28-create-waitlist-signups.sql` is kept as the record of the table
+that holds the earlier sign-ups.
 
-**[https://vercel.com/farahs-projects-13699e1e/v0-comic-landing-page](https://vercel.com/farahs-projects-13699e1e/v0-comic-landing-page)**
+## Stack
 
-## Build your app
+Next.js (app router) + Tailwind CSS v4 + shadcn/ui, deployed on Vercel.
 
-Continue building your app on:
+| Command | Action |
+|---|---|
+| `npm install` | Install dependencies |
+| `npm run dev` | Local dev server |
+| `npm run build` | Production build |
+| `npm start` | Serve the production build |
 
-**[https://v0.app/chat/uVu5PzZe3Ib](https://v0.app/chat/uVu5PzZe3Ib)**
+## Deploy note
 
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+This app sits at the repository root. It used to live in a `waitlist-landing-page/` folder inside
+the monorepo, so the Vercel project's Root Directory must be blank — while it still says
+`waitlist-landing-page/`, every build fails with "The specified Root Directory ... does not exist".
