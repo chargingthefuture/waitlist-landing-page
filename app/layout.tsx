@@ -37,8 +37,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${bangers.variable} ${inter.variable} antialiased`}>
+    // The next/font variables are set on <html> rather than <body> so that the
+    // :root theme variables in app/globals.css can resolve them.
+    <html lang="en" className={`dark ${bangers.variable} ${inter.variable}`}>
+      <body className="antialiased">
         <ErrorBoundary>
           {children}
         </ErrorBoundary>
