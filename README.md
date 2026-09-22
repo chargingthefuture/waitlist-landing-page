@@ -1,30 +1,41 @@
-# Comic landing page
+# Waitlist landing page
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Next.js app that takes waitlist sign-ups for [Charging the Future](https://chargingthefuture.com)
+and stores them in Postgres. It began as a v0.app project and lived in the product monorepo; it
+is maintained in this repository now.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/farahs-projects-13699e1e/v0-comic-landing-page)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/uVu5PzZe3Ib)
+## What it does
 
-## Overview
+| Route | What it is |
+|---|---|
+| `/` | The landing page with the sign-up form |
+| `/look-ma-i-fixed-it` | Problem-and-solution cards that map a situation to the part of the app that answers it |
+| `POST /api/waitlist` | Stores one sign-up in the `waitlist_signups` table |
+| `GET /api/waitlist/count` | Returns the number of sign-ups |
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+The schema is in `migrations/`. Links to the app, the blog, the Signal group, and the terms and
+privacy pages live in `lib/config.ts`. Fonts are self-hosted; there is no request to Google
+Fonts. Sentry is wired through `@sentry/nextjs`.
 
-## Deployment
+## Commands
 
-Your project is live at:
+| Command | Action |
+|---|---|
+| `npm install` | Install dependencies |
+| `npm run dev` | Local dev server |
+| `npm run build` | Production build |
+| `npm run start` | Serve the production build |
 
-**[https://vercel.com/farahs-projects-13699e1e/v0-comic-landing-page](https://vercel.com/farahs-projects-13699e1e/v0-comic-landing-page)**
+Set `DATABASE_URL` to a Postgres connection string before running; `lib/db.ts` turns SSL on for
+any host that is not local.
 
-## Build your app
+## Deploy
 
-Continue building your app on:
+Deployed by Vercel: merges to `main` deploy production and pull requests get preview deployments.
+There are no GitHub Actions workflows in this repository.
 
-**[https://v0.app/chat/uVu5PzZe3Ib](https://v0.app/chat/uVu5PzZe3Ib)**
+## Branches and pull requests
 
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+Descriptive branch names (`<type>/<short-description>`), never an auto-generated session name.
+Use a Conventional Commit PR title. The writing and process rules of the product repository
+(`chargingthefuture/chargingthefuture`, `CLAUDE.md`) apply here.
